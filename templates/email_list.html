@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Email List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>Subject</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for email in emails %}
+        <tr>
+          <td>{{ email.sender|safe }}</td>
+          <td>{{ email.subject|safe }}</td>
+          <td>{{ email.date_sent|safe }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
