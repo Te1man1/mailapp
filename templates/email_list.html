@@ -10,12 +10,14 @@
         <th>Date</th>
       </tr>
     </thead>
+     {% csrf_token %}
+    <button type="submit">Фильтр</button>
     <tbody>
       {% for email in emails %}
         <tr>
-          <td>{{ email.sender|safe }}</td>
-          <td>{{ email.subject|safe }}</td>
-          <td>{{ email.date_sent|safe }}</td>
+          <td>{{ email.sender }}</td>
+          <td>{{ email.subject}}</td>
+          <td>{{ email.date_sent}}</td>
         </tr>
       {% endfor %}
     </tbody>
